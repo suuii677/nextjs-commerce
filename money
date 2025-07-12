@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Commerce - Smartphones, Audio, PCs & Consoles</title>
+    <meta name="description" content="Up to 20% off iPhone 16, Galaxy S25, AirPods, Galaxy Buds, gaming PCs, and more">
+    <meta name="keywords" content="iPhone 16 deals, Galaxy S25 Ultra, AirPods Pro 2 discount, gaming PCs, tech deals">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-bg {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+            background-size: 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .ad-banner {
+            transition: opacity 0.3s ease;
+        }
+        .ad-banner:hover {
+            opacity: 0.9;
+        }
+        .product-img {
+            max-width: 100%;
+            height: 224px; /* h-56 in Tailwind */
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white p-6 sticky top-0 z-20 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold tracking-tight">AI Commerce - Smartphones, Audio, PCs & Consoles</h1>
+            <div class="flex items-center space-x-6">
+                <div id="cart-count" class="bg-pink-500 rounded-full px-3 py-1 text-sm font-bold">0</div>
+                <button id="cart-button" class="bg-white text-blue-600 px-4 py-2 rounded-full font-semibold hover:bg-gray-200 transition">Cart</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-8">
+        <!-- Banner Ad (Placeholder, replace with AdSense or Amazon Native Ads) -->
+        <section class="mb-12">
+            <div class="ad-banner block mx-auto">
+                <!-- Replace with AdSense code after signup -->
+                <!--
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-your-id"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-id" data-ad-slot="your-slot-id" data-ad-format="auto"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                -->
+                <img src="https://via.placeholder.com/728x90/1e3a8a/ffffff?text=Shop+Now+-+Up+to+20%25+Off" alt="Banner Ad" class="w-full max-w-4xl mx-auto rounded-lg">
+            </div>
+        </section>
+
+        <!-- AI Recommendations -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-600">AI-Powered Recommendations</h2>
+            <div id="recommendations" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </section>
+
+        <!-- Smartphones -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-600">Smartphones</h2>
+            <div id="smartphone-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </section>
+
+        <!-- Audio Products -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-600">Audio Products</h2>
+            <div id="audio-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </section>
+
+        <!-- PC and Gaming Consoles -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-600">PCs & Consoles</h2>
+            <div id="pc-console-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </section>
+
+        <!-- Banner Ad (Placeholder, replace with AdSense or Amazon Native Ads) -->
+        <section class="mb-12">
+            <div class="ad-banner block mx-auto">
+                <!-- Replace with AdSense code after signup -->
+                <!--
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-your-id"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-id" data-ad-slot="your-slot-id" data-ad-format="auto"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                -->
+                <img src="https://via.placeholder.com/728x90/7c3aed/ffffff?text=Get+Your+Tech+On+-+Save+Big" alt="Banner Ad" class="w-full max-w-4xl mx-auto rounded-lg">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white p-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 AI Commerce. All rights reserved.</p>
+            <div class="ad-banner inline-block">
+                <!-- Replace with AdSense code after signup -->
+                <!--
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-your-id"></script>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-your-id" data-ad-slot="your-slot-id" data-ad-format="auto"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                -->
+                <img src="https://via.placeholder.com/728x90/ec4899/ffffff?text=Explore+More+Tech+Deals" alt="Footer Ad" class="w-full max-w-4xl mx-auto rounded-lg">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-30">
+        <div class="bg-gray-800 p-8 rounded-2xl max-w-lg w-full modal-enter">
+            <h2 class="text-2xl font-bold mb-6 text-blue-400">Your Cart</h2>
+            <div id="cart-items" class="mb-6"></div>
+            <div class="flex justify-between items-center">
+                <p class="font-semibold text-lg">Total: $<span id="cart-total" class="text-pink-400">0</span></p>
+                <button id="close-cart" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product data with lowered prices and placeholder images
+        const products = [
+            // Smartphones
+            { 
+                id: 1, 
+                name: "iPhone 16 Pro Max", 
+                price: 959.99, 
+                image: "https://via.placeholder.com/300x200/1e3a8a/ffffff?text=iPhone+16+Pro+Max",
+                fallback: "https://via.placeholder.com/300x200/1e3a8a/ffffff?text=iPhone+16+Pro+Max",
+                category: "smartphone",
+                affiliateLink: "https://www.amazon.com/dp/B0D7K7V4RY?tag=your-affiliate-id"
+            },
+            { 
+                id: 2, 
+                name: "iPhone 16", 
+                price: 639.99, 
+                image: "https://via.placeholder.com/300x200/7c3aed/ffffff?text=iPhone+16",
+                fallback: "https://via.placeholder.com/300x200/7c3aed/ffffff?text=iPhone+16",
+                category: "smartphone",
+                affiliateLink: "https://www.amazon.com/dp/B0D7K5J8TX?tag=your-affiliate-id"
+            },
+            { 
+                id: 3, 
+                name: "Galaxy S25 Ultra", 
+                price: 1039.99, 
+                image: "https://via.placeholder.com/300x200/ec4899/ffffff?text=Galaxy+S25+Ultra",
+                fallback: "https://via.placeholder.com/300x200/ec4899/ffffff?text=Galaxy+S25+Ultra",
+                category: "smartphone",
+                affiliateLink: "https://www.amazon.com/dp/B0DR8Y3V2P?tag=your-affiliate-id"
+            },
+            { 
+                id: 4, 
+                name: "Galaxy Z Fold 7", 
+                price: 1439.99, 
+                image: "https://via.placeholder.com/300x200/3b82f6/ffffff?text=Galaxy+Z+Fold+7",
+                fallback: "https://via.placeholder.com/300x200/3b82f6/ffffff?text=Galaxy+Z+Fold+7",
+                category: "smartphone",
+                affiliateLink: "https://www.amazon.com/dp/B0DY5T7V3Q?tag=your-affiliate-id"
+            },
+            // Audio Products
+            { 
+                id: 5, 
+                name: "AirPods Pro 2", 
+                price: 199.99, 
+                image: "https://via.placeholder.com/300x200/1e3a8a/ffffff?text=AirPods+Pro+2",
+                fallback: "https://via.placeholder.com/300x200/1e3a8a/ffffff?text=AirPods+Pro+2",
+                category: "audio",
+                affiliateLink: "https://www.amazon.com/dp/B0D1XDB1SR?tag=your-affiliate-id"
+            },
+            { 
+                id: 6, 
+                name: "Galaxy Buds 3 Pro", 
+                price: 183.99, 
+                image: "https://via.placeholder.com/300x200/7c3aed/ffffff?text=Galaxy+Buds+3+Pro",
+                fallback: "https://via.placeholder.com/300x200/7c3aed/ffffff?text=Galaxy+Buds+3+Pro",
+                category: "audio",
+                affiliateLink: "https://www.amazon.com/dp/B0D4T8J9VR?tag=your-affiliate-id"
+            },
+            { 
+                id: 7, 
+                name: "Apple Watch Ultra 2", 
+                price: 639.99, 
+                image: "https://via.placeholder.com/300x200/ec4899/ffffff?text=Apple+Watch+Ultra+2",
+                fallback: "https://via.placeholder.com/300x200/ec4899/ffffff?text=Apple+Watch+Ultra+2",
+                category: "audio",
+                affiliateLink: "https://www.amazon.com/dp/B0D3K7V4TX?tag=your-affiliate-id"
+            },
+            { 
+                id: 8, 
+                name: "Galaxy Watch Ultra LTE", 
+                price: 519.99, 
+                image: "https://via.placeholder.com/300x200/3b82f6/ffffff?text=Galaxy+Watch+Ultra",
+                fallback: "https://via.placeholder.com/300x200/3b82f6/ffffff?text=Galaxy+Watch+Ultra",
+                category: "audio",
+                affiliateLink: "https://www.amazon.com/dp/B0D5T8J9WQ?tag=your-affiliate-id"
+            },
+            // PC and Console Products
+            { 
+                id: 9, 
+                name: "ASUS ROG Zephyrus G14", 
+                price: 799.99, 
+                image: "https://via.placeholder.com/300x200/4b5563/ffffff?text=ASUS+ROG+Zephyrus+G14",
+                fallback: "https://via.placeholder.com/300x200/4b5563/ffffff?text=ASUS+ROG+Zephyrus+G14",
+                category: "pc-console",
+                affiliateLink: "https://www.amazon.com/dp/B0CJSY3WHL?tag=your-affiliate-id"
+            },
+            { 
+                id: 10, 
+                name: "Alienware Aurora R16", 
+                price: 1039.99, 
+                image: "https://via.placeholder.com/300x200/6b7280/ffffff?text=Alienware+Aurora+R16",
+                fallback: "https://via.placeholder.com/300x200/6b7280/ffffff?text=Alienware+Aurora+R16",
+                category: "pc-console",
+                affiliateLink: "https://www.amazon.com/dp/B0CJLTXBFW?tag=your-affiliate-id"
+            },
+            { 
+                id: 11, 
+                name: "Apple iPad Mini (A17 Pro)", 
+                price: 399.99, 
+                image: "https://via.placeholder.com/300x200/9333ea/ffffff?text=iPad+Mini+A17+Pro",
+                fallback: "https://via.placeholder.com/300x200/9333ea/ffffff?text=iPad+Mini+A17+Pro",
+                category: "pc-console",
+                affiliateLink: "https://www.amazon.com/dp/B0D6K7V5RX?tag=your-affiliate-id"
+            }
+        ];
+
+        let cart = [];
+
+        // Render smartphone products
+        function renderSmartphoneProducts() {
+            const smartphoneContainer = document.getElementById('smartphone-products');
+            try {
+                smartphoneContainer.innerHTML = products
+                    .filter(product => product.category === 'smartphone')
+                    .map(product => `
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg product-card">
+                            <img src="${product.image}" onerror="console.error('Image failed to load for ${product.name}:', this.src); this.src='${product.fallback}'" alt="${product.name}" class="product-img mb-4 rounded-lg">
+                            <h3 class="text-xl font-semibold text-blue-300">${product.name}</h3>
+                            <p class="text-gray-400 mb-4">$${product.price.toFixed(2)}</p>
+                            <a href="${product.affiliateLink}" target="_blank" rel="noopener noreferrer" onclick="addToCart(${product.id}, '${product.affiliateLink}')" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-600 hover:to-purple-700 transition w-full text-center">Add to Cart</a>
+                        </div>
+                    `).join('');
+                console.log('Smartphone products rendered successfully');
+            } catch (error) {
+                console.error('Error rendering smartphone products:', error);
+            }
+        }
+
+        // Render audio products
+        function renderAudioProducts() {
+            const audioContainer = document.getElementById('audio-products');
+            try {
+                audioContainer.innerHTML = products
+                    .filter(product => product.category === 'audio')
+                    .map(product => `
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg product-card">
+                            <img src="${product.image}" onerror="console.error('Image failed to load for ${product.name}:', this.src); this.src='${product.fallback}'" alt="${product.name}" class="product-img mb-4 rounded-lg">
+                            <h3 class="text-xl font-semibold text-blue-300">${product.name}</h3>
+                            <p class="text-gray-400 mb-4">$${product.price.toFixed(2)}</p>
+                            <a href="${product.affiliateLink}" target="_blank" rel="noopener noreferrer" onclick="addToCart(${product.id}, '${product.affiliateLink}')" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-600 hover:to-purple-700 transition w-full text-center">Add to Cart</a>
+                        </div>
+                    `).join('');
+                console.log('Audio products rendered successfully');
+            } catch (error) {
+                console.error('Error rendering audio products:', error);
+            }
+        }
+
+        // Render PC and console products
+        function renderPCConsoleProducts() {
+            const pcConsoleContainer = document.getElementById('pc-console-products');
+            try {
+                pcConsoleContainer.innerHTML = products
+                    .filter(product => product.category === 'pc-console')
+                    .map(product => `
+                        <div class="bg-gray-800 p-6 rounded-xl shadow-lg product-card">
+                            <img src="${product.image}" onerror="console.error('Image failed to load for ${product.name}:', this.src); this.src='${product.fallback}'" alt="${product.name}" class="product-img mb-4 rounded-lg">
+                            <h3 class="text-xl font-semibold text-blue-300">${product.name}</h3>
+                            <p class="text-gray-400 mb-4">$${product.price.toFixed(2)}</p>
+                            <a href="${product.affiliateLink}" target="_blank" rel="noopener noreferrer" onclick="addToCart(${product.id}, '${product.affiliateLink}')" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-600 hover:to-purple-700 transition w-full text-center">Add to Cart</a>
+                        </div>
+                    `).join('');
+                console.log('PC/console products rendered successfully');
+            } catch (error) {
+                console.error('Error rendering PC/console products:', error);
+            }
+        }
+
+        // Render AI recommendations
+        function renderRecommendations() {
+            const recommendationContainer = document.getElementById('recommendations');
+            try {
+                const recommended = products.slice(0, 4); // Mock: recommend first four products
+                recommendationContainer.innerHTML = recommended.map(product => `
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg product-card">
+                        <img src="${product.image}" onerror="console.error('Image failed to load for ${product.name}:', this.src); this.src='${product.fallback}'" alt="${product.name}" class="product-img mb-4 rounded-lg">
+                        <h3 class="text-xl font-semibold text-blue-300">${product.name}</h3>
+                        <p class="text-gray-400 mb-4">$${product.price.toFixed(2)}</p>
+                        <a href="${product.affiliateLink}" target="_blank" rel="noopener noreferrer" onclick="addToCart(${product.id}, '${product.affiliateLink}')" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-600 hover:to-purple-700 transition w-full text-center">Add to Cart</a>
+                </div>
+            `).join('');
+                console.log('Recommendations rendered successfully');
+            } catch (error) {
+                console.error('Error rendering recommendations:', error);
+            }
+        }
+
+        // Add to cart with redirect
+        function addToCart(productId, affiliateLink) {
+            try {
+                const product = products.find(p => p.id === productId);
+                if (!product) {
+                    console.error(`Product with ID ${productId} not found`);
+                    return;
+                }
+                cart.push(product);
+                updateCart();
+                window.open(affiliateLink, '_blank');
+                console.log(`Redirecting to ${affiliateLink}`);
+            } catch (error) {
+                console.error('Error in addToCart:', error);
+            }
+        }
+
+        // Update cart display
+        function updateCart() {
+            try {
+                const cartCount = document.getElementById('cart-count');
+                const cartItems = document.getElementById('cart-items');
+                const cartTotal = document.getElementById('cart-total');
+                cartCount.textContent = cart.length;
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex justify-between mb-4 text-gray-300">
+                        <span>${item.name}</span>
+                        <span>$${item.price.toFixed(2)}</span>
+                    </div>
+                `).join('');
+                const total = cart.reduce((sum, item) => sum + item.price, 0);
+                cartTotal.textContent = total.toFixed(2);
+                console.log('Cart updated successfully');
+            } catch (error) {
+                console.error('Error updating cart:', error);
+            }
+        }
+
+        // Cart modal toggle with animation
+        try {
+            const cartModal = document.getElementById('cart-modal');
+            document.getElementById('cart-button').addEventListener('click', () => {
+                cartModal.classList.remove('hidden');
+                const modalContent = cartModal.querySelector('div');
+                modalContent.classList.add('modal-enter-active');
+                setTimeout(() => modalContent.classList.remove('modal-enter-active'), 300);
+                console.log('Cart modal opened');
+            });
+            document.getElementById('close-cart').addEventListener('click', () => {
+                cartModal.classList.add('hidden');
+                console.log('Cart modal closed');
+            });
+        } catch (error) {
+            console.error('Error setting up cart modal:', error);
+        }
+
+        // Initialize
+        try {
+            renderSmartphoneProducts();
+            renderAudioProducts();
+            renderPCConsoleProducts();
+            renderRecommendations();
+            console.log('Page initialized successfully');
+        } catch (error) {
+            console.error('Initialization error:', error);
+        }
+    </script>
+</body>
+</html>
